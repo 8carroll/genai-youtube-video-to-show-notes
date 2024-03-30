@@ -1,0 +1,222 @@
+what's good YouTube if you're watching
+this video you successfully made it to
+layer seven of that oide model where we
+give you nothing but that application
+you can apply directly to your life my
+name is dwan life foot and I'm joined by
+Brandon Carrol and in this video it's
+time to get serious with get Ops now
+we're going to talk about get outs but
+before we do a message from
+Brandon have you ever heard this before
+we can't update the network the business
+doesn't allow it I'm sure you have right
+if you have I want you to tell us down
+in the comments that's not the only
+thing that we hear from our Network
+Engineers we also hear that every time
+we Implement uh changing the network
+something breaks again sound off in the
+comments I want to know if if you've
+heard this as well the one that I like
+the most is hey so and so is on vacation
+we can't make any changes until they're
+back is that you tell us in the comments
+these are the problems that we hear and
+these are the problems that we're going
+to solve as we talk about gitops today
+so
+let's do it okay we just finished our
+Chuck talk live at reinvent 2023 on get
+serious implementing Network and
+security and compliance with giops it
+was an amazing session so we thought we'
+make a quick video to give you five
+things that you should know for applying
+get outs for your network security and
+compliance before we get into our top
+five tips on G Ops for network security
+and compliance let's talk about what
+giops is g Ops Evol from devops and the
+goal and the premise behind get Ops is
+to take your infrastructure code and
+separate it from your business
+application so that way developers can
+have their pipelines and focus on their
+business logic and not have to worry
+about the infrastructure and the network
+teams and the operations team can take
+the infrastructure and deploy it as code
+through G now you have your version
+control and then you bring all that
+together with the cicd pipeline so
+number one we're going to start with
+networking breaking down those monoliths
+when it comes to your network
+infrastructures often times we have very
+large deployments with routing tables
+that are extremely large you may have a
+Transit Gateway that has almost 1 th000
+routes all your vpcs are attached to
+that trans associated with that one
+Transit Gateway rounding table and if
+you make a change to that rounding table
+then it affects all of your network that
+monolith is something that you can break
+down and figure out okay how can we mon
+make this a micro different type of
+architecture so now we have our Dev
+environments with their own vpcs we have
+a network centralized account and we are
+able to segment our infrastructure and
+now we can figure out how to leverage
+cicd with gitops now number two when it
+comes to gitops now we have to think
+about git and infrastructure is code
+I'll start with infrastructures code
+infrastructure is code is saying okay
+our Network deployment that we have
+currently maybe we were leveraging click
+Ops yeah let's figure out how we can
+leverage tools like cloud formation as
+well as terraform put our infrastructure
+into templates and then from there we
+can take those templates and put them in
+some sort of Virgin control get do pull
+requests around those templates in our
+virgin control system using something
+like AWS C commit and now we're figuring
+out how we can automate with our
+infrastructure with infrastructure is
+code and then we can really Leverage The
+Power of G Ops but we're going to talk
+about cicd but first we need to think
+about security Brandon yeah so here's
+our uh third thing that you need to know
+and this is secure the pipeline okay so
+danan mentioned code commit so when we
+look at a pipeline we have a couple of
+things that make up the pipeline we have
+code commit code pipeline code build
+each of these areas is critical to make
+sure that it's secured so when it comes
+to code commit we want to think about
+permissions and we want to think about
+access to that repo
+https uh SSH and making sure those
+credentials are tied to IM and then also
+when it comes to code pipeline we have a
+service Ro that's going to be uh used
+here it's created when we enable it we
+want to make sure that that is
+controlled so that it's only touching
+services that we want it to touch we
+want to use the parameter store to store
+our sensitive information rather than
+putting it in the code and we want to
+have all of our build
+artifacts encrypted and we're going to
+use KMS and customer manage keys for
+this uh we also can run this inside of a
+VPC it doesn't do that by default but
+then we can apply some security groups
+and that gives us the ability to control
+the flow of traffic throughout this
+pipeline so that is securing the
+pipeline we really got to think about
+that now the fourth area that we want to
+talk about is security through through
+the pipeline we're taking this critical
+code and we're pushing that code through
+a pipeline we want that code to be
+secure the two ways that I want to talk
+about that's linting and setting up our
+guard rails with CFN guard so when it
+comes to linting linting is going to not
+only look at our syntax but it's going
+to look at things like hey did I
+accidentally uh apply my uh public route
+table to uh and Associate it with my
+private routing table or uh public
+subnet associated with my private
+routing table it's going to look for
+things like that when it goes to the
+linting those can become security issues
+so that's a critical piece and the next
+piece is that CFN guard and setting up
+those guard rails so that we can look at
+things and say you know I don't want my
+Transit gateway to use the default
+routing table so every time I push code
+through here whether or not I have a
+Transit Gateway configuration in that
+code I'm going to make sure that if I do
+have a Transit Gateway configuration I'm
+not using the default routing table and
+I have these guard rails that I can
+apply right up front and this is even
+before it gets deployed so as we go
+through the pipeline we check it if it
+fails we fix it if it passes then we go
+on to this test page so that's the
+fourth thing that you need to know when
+it comes to get Ops for network and
+security and compliance let's talk
+number five number five we're bringing
+everything together with cicd on AWS
+that's going to be aw code Pipeline and
+in this pipeline I mentioned in the
+beginning I infrastructure is code so
+now you're building this on your laptop
+you're building in Cloud9 somewhere
+using templates as yam file Json with
+ter with cloud formation or TF files
+with terraform and then we're sending
+that to the pipeline with our source in
+our in our state first stage of our
+pipeline which is going to be that
+Source stage and here we're doing our
+Version Control so now when the pipeline
+sees there's a change to our repository
+now it's going to trigger the entire
+pipeline to go to that build phase to do
+the lenting the CFN nag and all the
+tests that we need to run at the you
+that the user acceptance testing phase
+and once those tests have passed locally
+on our build which can be Cod AWS code
+Bild which is a Docker container then we
+can deploy to a test environment to
+verify with things like reability analy
+anzer as well as network access analyzer
+that we have the network access and the
+paths in place that we actually need and
+then at that point we can do some
+approvals and once all those tests have
+successfully passed then from there we
+can go to a chain set in that production
+stage and if the chain set is approved
+all changes should be done and applied
+to production then from there we could
+deploy to production and now we can run
+our continuous integration continuous
+evaluation with more tools like
+reachability analyzer network access
+analyzer AWS config security Hub have
+this continuous evaluation of our
+infrastructure now we have a fully
+automated get out pipeline for our
+Network infrastructure we hope you
+enjoyed this video we left a ton of
+resources in the description of this
+video Brandon is going to take us out if
+you have any comments please leave them
+in the comment section below Brandon
+back to you we thank you for watching we
+hope you found these five uh valuable
+tips for getting serious when using GE
+Ops for network and security compliance
+again check out those resources below
+like subscribe leave some comments
+connect with us and we'll see you next
+time

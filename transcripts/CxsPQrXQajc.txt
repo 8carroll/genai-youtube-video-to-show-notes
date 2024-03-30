@@ -1,0 +1,337 @@
+so this is the incident handling life
+cycle this is also the same thing or
+sometimes also called the incident
+response life cycle you know if you're
+an incident responder or PCH analyst or
+you know in response analyst you're
+going to be using this like in sort of
+like a mental model for how to respond
+to incidents it has this like sort of
+like cyclic nature to it so it starts
+from preparation and then from
+preparation you go to detection analysis
+this is where you're actually doing like
+investigation and stuff like that and
+then from there you go on containment
+eradication and Recovery those are
+actually like individual steps
+themselves but sometimes you have to
+like go back from containment
+eradication and Recovery back to
+detection and Analysis like sometimes
+that process is cyclic as you find more
+evidence more data until you know you
+get to a point where you're like okay
+you know we found enough and then you
+then go on to post incident activity and
+then from there post incident activity
+feeds back to preparation so what you
+learn from your post incident activity
+actually helps you become better at
+preparing for incidents when they might
+happen in the future so this is sort of
+like you know the I guess the standard
+like instant response life cycle or you
+know I guess according to n all right so
+as an instant handle or SL analyst we
+would aim to know the attacker's tactics
+techniques and procedures as are also
+known as ttps and then we can stop
+defend prevent against these attacks in
+a better way so the incident handling
+process is divided into four different
+phases which we'll briefly go through
+before jumping into the incident all
+right so we have the preparation phase
+so this phase covers the Readiness of an
+organization against an attack that
+means documenting the requirements
+defining the policies incorporating
+security controls to monitor like EDR
+Sim IDs IPS and it also includes higher
+end training the staff I think part of
+this process also involves having like
+you know your instant respon your
+instant response run books or playbooks
+whatever you know however they work in
+your organization as part of like you
+know this is what we're going to do like
+when an incident happens stuff like that
+but I guess that kind of goes into
+hiring and training the staff as well so
+that's the first first phase and I think
+this is probably one of the most
+important phases of an incident because
+if you're not prepared for an incident
+when it happens like it could you know
+significantly be a lot worse I've been
+actually researching uh recently about
+like other adjacent fields and how they
+respond to incidents so I was recently
+like going through some material about
+how like you know organizations like I
+think the OSHA I think deal with like
+incidents you know how like firemen and
+you know Emergency Services deal with
+incidents I took some notes here and I
+kind of share them right here because I
+think a lot of times like you know we
+have these adjacent methodologies or
+theories that we can apply into cyber
+security in terms of like dealing with
+like our own things because we're not
+the only ones that deal with incidents
+right everybody deals with incidents
+like warehouses deal with incidents law
+enforcement deals with incidents
+paramedics deal with incidents fire
+people deal with incidents right so they
+they've probably been doing this like
+way longer than we have been they
+probably are doing this way better than
+we could ever do it so there's a lot we
+can actually gain from how they actually
+think about incidents and something I
+took from that research I was doing was
+uh firstly when we are investigating
+incidents it's not to assign blame and
+shame but first for prevention because
+those who don't know history are doomed
+to repeat it I think this probably goes
+into like the the end of the instant
+response life cycle which is post
+instant activities or the Lessons
+Learned part of it because when you
+actually know what happened and you're a
+to like kind of documented and know like
+you know the the issues whatever the
+case may be you can use that to prevent
+the incident from happening again or be
+better prepared when is like that hats
+so if you don't know history you're
+doomed to repeat history that's the
+first point second point is to identify
+policies and training deficiency so as
+you can see here in your preparation
+phase right part of what you're doing is
+defining policies right so an incident
+could actually actually be like someone
+like breaking a policy so in this case
+you're able to identify right when
+you're do your investigation and your
+inst response if the policies you're put
+in place are actually being being
+properly adhered to and also you you
+you're able to know if the training on
+Cyber safety and different things are
+actually working in accordance to the
+policies that guide how your employees
+do things so let's even take cyber
+security out of this in the first place
+right um and go into like you know
+someone that works in a very U like a
+construction sort of uh environment
+right in a construction environment when
+you're working the policy states that
+you know I'm this hyp hypothetical by
+the way the policy states that you
+should always wear a harness if you're
+on a crane and also wear a helmet so
+what if you have someone who you know
+very new guy comes in he's wearing a
+helmet he's wearing glov all those
+things wearing like a you know a boot or
+whatever the case is but he's not
+wearing a harness right well it might
+not have been that he didn't want to
+adhere to the policy it might have been
+that the training didn't actually cover
+the policy that he should be wearing a
+harness and not just a helmet and a boot
+right so in that case as part of the
+instant instant investigation and
+response preparation is tested here
+because you're seeing that your policies
+are not being even though they're defin
+they're not being adhered to and they
+can help you make sure that this person
+is doing what they're supposed to be
+doing and you do actually event have
+have an incident so I think all this
+kind of like feeds back into like both
+like the lessons learn and preparation
+cuz like if you remember which we looked
+at here it's you know it's it's cyclic
+right they they all feed back into each
+other that's enough about preparation I
+do have a couple more points um here but
+you can go into that into that later all
+right so we have next the detection
+analysis phase this is actually where
+I've spent most of my career so this if
+you're a suck analyst or you know like a
+tier one analyst it's probably what
+you're going to be doing most of you
+know your work you're going to be more
+in this phase of the life cycle and this
+covers everything related to detecting
+an incident and the analysis of the
+incident this phase covers getting
+alerts from the security controls like a
+Sim an EDR um investigating the alert to
+find the root cause and this phase also
+covers hunting for the unknown threat
+within the organization so there's a lot
+actually goes on in this phase but it
+typically you know is you know from like
+that you know alert you know like you
+know what you what you're doing as a
+tier one where you get you know the
+alert from the Sim whatever the case is
+you kind of do your triage and then if
+there's anything you can then escalate
+to like you know the seniors or like you
+know the responders um they also say
+this also covers some hunt so if you
+define something during like a huntting
+expenditure or you know something like
+that this could also you know be part of
+your detection and Analysis right
+because it's like the first you know
+sort of like Way by which you're able to
+identify that something has happened
+something bad or something probably bad
+might have happened right so that's the
+detection and anounces phase next we
+have the containment eradication and
+Recovery phase so this is actually the
+part of instant response that I wanted
+to learn more about because lot of my
+career for like the you know the last 3
+4 years have be mostly focused on you
+know detection and Analysis I also
+wanted to learn how to do contain
+containment how to do eradication how to
+do recovery right that's kind of why I
+you know started looking for a new role
+and you know got into my my my current
+role you know part of the containment
+right so if you think about you know
+sort of like in a nuclear you know
+there's a nuclear think of like a
+nuclear bomb in this case right I don't
+mean to be all I don't mean to like us
+you know something like that devastating
+but when something like that happens
+right it's like okay how do we contain
+you know this area right if you watch
+the movies like contain the area so it
+doesn't spread beyond that because if it
+spreads beyond that there's you know
+more loss of life more degradation of
+the environment but if you're able to
+contain it to like this small area
+you're kind of able to like make sure
+that okay we can just like focus on this
+because the bigger it gets the the
+harder it is for us to deal with it so
+we want to make sure we don't let it
+spread beyond what it is at now
+eradication is like okay now if
+contained this like nuclear you know
+whatever you know area that we're
+dealing with how do we how do we
+actually like I don't know like Defuse
+The Bomb or how do we like actually like
+make sure that this you know nuclear
+waste or whatever it is like you know
+just ends here right I don't know maybe
+use some anti nuclear thing to clear it
+out but in cyber secur it's like okay
+how do we if the attacker is present
+within this cont pained environment how
+do we kick them out how do we like you
+know put them up how do we make sure
+like they no longer have access and then
+when they no longer have access recovery
+goes over how do we make sure we get
+this system back to its working State
+how do we get this business function
+back to its working State how do we make
+sure that you know things can go back to
+to normal now that we've taking out the
+attacker and no longer have access and
+there's no spread in the network right
+how do we make sure that we go back to
+business operations as usual that's
+where the recovery face comes back so
+it's a whole lot of it's a whole lot of
+things it's a whole process but
+containment eradication and Recovery can
+of entirely embody those different
+things all right next we have the post
+incident activity Lessons Learned
+learned it sounds like someone that is
+from Europe because Americans like to
+say learned but this phase includes
+identifying the loopholes in the
+organization security posture which led
+to an intrusion and improving so that
+the attack does not happen next time the
+steps involved identifying weaknesses
+that led to the attack adding detection
+rules to that so that a similar breach
+does not happen again and most
+importantly training the staff if
+required now I I do want to add
+something onto this right because
+incidents come with loss right uh when
+you when you have an incident there's
+you lose something right you lose time
+you lose Manpower you lose money
+sometimes right you lose good reputation
+one of the primary goals of a business
+whatever the business is whatever it is
+whether whether they they're in for for
+profit for profit or not for profit is
+to not lose is reducing loss so it's
+like by any means we can't lose like we
+should not be losing so when you have an
+incident you're losing you're losing
+time you're losing money you're losing
+reputation you're losing you know
+Manpower right a lot of things are being
+lost so when you have incidents your
+goal is to make sure that they don't
+happen again because if if if this
+happens all the time think about it if
+you think about like something like the
+MGM attack right I was watching a
+documentary yesterday about how MGM was
+losing like millions of dollars a day
+from the attack alone and this is aside
+from like what the attackers might have
+actually like stole from them whatever
+the case may be but they were losing
+Milli just from just from not having any
+operations they're losing millions of
+dollars a day but that's not just what
+they're losing they're losing the
+reputation right what has happened
+they're probably going to lose even more
+except if there's like a monopoly right
+but they're probably going to lose more
+in reputation because people are not
+going to want to deal with them because
+we didn't protect my credit card
+information personal information I
+probably wasn't safe in the hotel
+because like all these attackers had
+access to everything so that's a loss of
+reputation they've lost a lot from that
+attack so the goal is to not always to
+maximize profit but to reduce loss
+whenever you have an incident you're
+losing a lot of things which you know is
+kind of inevitable But ultimately not
+for it to happen again

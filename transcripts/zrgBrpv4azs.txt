@@ -1,0 +1,408 @@
+I spent almost two years of my cyber
+security career working on a Sim what
+does that mean well in my last role at
+dat a dog I was a detection engineer or
+security engineer or thread detection
+engineer whatever you want to call it on
+the cloud Sim product I data dog I spent
+a lot of time working on research and
+finding Ways by which attackers exploit
+vulnerabilities within different
+environments from cloud environments to
+endpoints to SAS applications to
+networks and different things tools and
+platforms that organizations use for
+their it systems Cloud systems and
+security systems and what I did was I
+applied the feedback of the research I
+found into creating detection rules
+within a platform called a sim a
+security information and event
+management system and the Sim helped
+customers identify threats within their
+environment in real time now I no longer
+work at that company doing thread
+detection stuff I work at a different
+company doing instant response but I
+decided to make this video as a quick
+quick introduction to what a Sim is and
+help you guys understand how Sims work
+and and what exactly is the purpose of a
+Sim today we'll be diving into the trime
+room introduction to sim and going over
+a couple of tasks there to understand
+the world of security information and
+event management let's get right into
+the video all right letter Sim what is
+Sim Sim stands for security information
+and event management it's a tool that
+collects data from various endpoints
+network devices across the network
+stores them at a centralized place and
+performs correlation on them this room
+will cover the basic concepts required
+to understand Sim and how it works so
+some of the learning objectives covered
+in this room are what is a Sim and we
+can see what it is here how does it work
+why is Sim needed what is the network
+visibility and what are log sources and
+how is log ingestion done what are the
+capabilities a Sim provides and what
+does a Sim stand for it stands for
+security information and event
+management see what I miss here security
+information and event management again
+guess you have to have the system okay
+there we go all right let's look at what
+network visibility is so before
+explaining the importance of sim let's
+first understand why it's critical to
+have better visibility of all the
+activities within a network the image
+below shows an example of a simple
+Network that comprises multiple Linux
+Windows based endpoints or Linux or
+Windows based endpoints one data server
+and one website each component
+communicates with the other or accesses
+the internet through a router so we have
+20 Linux workstations 5050 Windows
+workstations
+we have the router we also have the data
+server the web server and the internet
+which is allowing us access through the
+router as we know each Network component
+can have one or more log sources
+generating different logs one example
+could be setting up sisman and sisma by
+the way is the system monitor in Windows
+and it's basically a driver developed by
+Microsoft that is designed to Monitor
+and log various events happening within
+a Windows system so setting up six so
+setting up six month along with Windows
+event logs to have better visibility of
+Windows endpoint we can divide our
+Network log sources into two logical
+Parts the first one is the host Centric
+log Source these are log sources that
+capture events that occurred within or
+related to The Host some log sources
+that generate hostcentric logs are
+windows event logs cisman osquery and
+some example of those hostcentric logs
+are say someone accessing a file someone
+attempt to authenticate process
+execution activity a process adding
+editing deleting a registry cure value
+or Powershell execution and a lot of
+these things are typically registered
+through Windows Event codes specifically
+you know for Windows and you know with
+Windows it's where you actually have the
+registry and then the second log source
+is the network Centric log sources these
+are network related logs that are
+generated when the hosts communicate
+with each other or access the internet
+to a visit a website so some
+network-based Protocols are SSH VPN HTP
+or https FTP and some example of such
+events are SSH Connection by the way if
+you're not not familiar with SSH ssh
+stands for the secure shell which refers
+to a cryptographic network protocol used
+in Secure communication between devices
+so what SSH does is it's essentially
+encrypts data using cryptographic
+algorithms such as ases which is uh
+Advanced encrypt systems and is often
+used when logging in remotely to a
+computer or server this is typically
+used with Linux uh but you know SS is
+pretty bit quit as you know especially
+if you're if you're work in cyber
+security or or technology in general so
+a file being accessed FTP is also
+another Network Centric log source and
+FTP is a protocol that's designed to
+help efficiently transfer files between
+different systems even if they're
+non-compatible also you have web traffic
+it's also considered a network Centric
+log Source you have a user access in
+your company's resource to a VPN if
+you're not familiar with a VPN a VPN is
+a virtual private Network that
+essentially creates a secur tunnel
+between two different networks so for
+example with trime here you use a VPN to
+access their private Network on which
+the machines they're going to be using
+operate on and VPN are typically used
+used uh for an employee to log into
+their workplace when they're not on
+sides so for example sometimes when I
+work from home or when I'm traveling for
+work or business related matters I can
+use a VPN to connect to my company's
+corporate or internal Network and these
+vpns are also used where networks are
+don't provide encryption so like coffee
+shops like airports and some you know
+local places where you know some of
+their internet connections are not
+encrypted and it's a great way of
+preventing other people from reading
+your network traffic which is
+essentially why it's a virtual private
+Network finally you have the network
+file sharing activity of course
+obviously in the name it's a network
+Centric log Source now why is the Sim
+important it's important because there
+are different devices you know hundreds
+of devices or millions of devices
+sometimes generating hundreds of events
+per second so examining those logs on
+each device one by one in the case of an
+incident can be very tedious this is one
+of the advantages of having a Sim
+solution in place it not only logs from
+the various sources so it doesn't
+doesn't just collect the logs in real
+time but it also provides the ability to
+correlate between different events
+search through the logs investigate
+incidents and respond promptly and some
+key features provided by a Sim are one
+realtime logage gestion alar in against
+abnomal activities 24/7 monitoring
+invisibility that is if your you know
+Sim platform stays you know up all the
+time protection against the latest
+threats through early detection Data
+Insights and visualization ability to
+investigate past incidents so as you can
+see here the first step is to collect
+the data sources aggregate the data
+discover and detect threats to the
+process of querying and trying to
+correlate different uh parts of the data
+or different data points to create a
+story beyond what what might have
+happened in an attack and then finally
+you know you use that data they've
+correlated and investigated and queried
+uh to identify breaches and investigate
+alerts so the first question here is is
+the registry related activity host
+Centric or network Centric registry
+related activity is host Centric because
+this is related to the host in this case
+finally is VPN hostcentric or network
+Centric VPN is Network Centric because
+you're connecting to a virtual private
+Network all right next let's understand
+log sources and log ingestion every
+device in the network generates some
+kind of log whenever an activity is
+performed on it like a user res a
+website connecting to SSH logging into
+his workstation and so on some devices
+that are found in a network environment
+are discussed below let's start with the
+Windows machine which is very very
+popular as a matter of fact right now
+I'm actually recording this video on a
+Windows machine Windows records every
+event that can be viewed through the
+Event Viewer utility it assigns a unique
+ID to each type of log activity making
+it easy for the analyst to examine and
+keep track of to view events in a
+Windows environment type Event Viewer in
+the search bar and it takes you to the
+tool where different logs are are stored
+and can be viewed as shown below these
+logs from all windows endpoints are
+forwarded to the Sim solution for
+Monitor and better visibility next we
+have our Linux workstation Linux if
+you're not familiar with Linux let's go
+go over what Linux is Linux is a command
+line operating system based on Unix and
+there are multiple operating systems
+that are based on Linux that's what
+Linux is simply but there's a lot more
+to Linux let's look at it so Linux OS
+stores all the related logs such as
+events errors warnings and so on which
+are then ingested into SIM for
+continuous monitoring some of the common
+locations where Linux storage logs are
+VAR log httpd which contains HTTP
+requests responses and error locks if
+you're not familiar with HTTP this what
+it is so HTTP is the hypertext transfer
+protocol and it's the protocol that
+specifies how a web browser and a web
+server can communicate so your web
+browser requests content from say for
+example this site the trime web server
+using the HTP protocol as you go through
+this room as a matter of fact if you're
+watching this video on YouTube on you
+know your browser you're using the HTTP
+protocol to actually communicate with
+YouTube's web server to serve you the
+video you're watching right now and if
+you want to watch in the more secure
+manner that would be https so that's
+what HTTP is and those logs contain
+requests and response so when you make a
+request to a server you're basically
+asking the server for information and
+the response is what the server gives
+back to you as a response based of the
+request you made to that server so
+client and server communication right
+there next we have the VAR log Chron
+folder which logs events related to
+Chron jobs next we have the VAR log
+Chron folder which stores uh events
+related to Chron jobs so Chron jobs
+essentially help you automate tasks
+within the Linux OS next is the VAR log
+off. log and VAR log secure and these
+store authentication events related to
+the Linux OS finally you have the VAR
+log Kern which is which stores kernel
+related events so here's an example of a
+cron log so it looks like here this
+started with log level notice no time
+stamp found no time stamp found unable
+to ex exct this and then current output
+for this to devau so looks like whatever
+Cron job was said failed here because it
+said says it was unable to accept that
+and then it it it outputed whatever it
+is to devn which is basically no which
+is basically empty all right finally we
+have the web server right and you know
+for context we're looking at different
+log sources and log ingestion before we
+go into what the web server a a lot of
+web servers are actually Linux server so
+you kind of see some similarities
+between the logs you might find on the
+web server and a Linux server especially
+if it gets compromised because you're
+potentially going to have a Linux server
+on the back end but you most likely
+would have more HTTP related information
+with a web server or web related uh
+authentication details within a web
+server so it is important to keep an eye
+on all the requests and responses coming
+in and out of the web server for any
+potential web attack in Linux common
+locations to write all Apache related
+logs are VAR log Apache or VAR log httpd
+so here's an example of Apache log so
+right here you can see a get request
+made to this particular endpoint using
+HTTP 1.0 which is a version of HTTP and
+finally the request had a 200 status
+code which means it was successful and
+this is from the 182 The 168 the 21 the
+200 IP address and this is when it
+happened same thing here this is from
+the loop back address that shows a get
+get request to a you know empty
+directory here so next thing we have is
+log ingestion all these logs provide a
+wealth of information and can help in
+identifying security issues each Sim
+solution has its own way of ingesting
+the logs some common methods used by the
+Sim Solutions are explained below so the
+first method is the agent forwarder so
+basically same solutions that use the
+agent forwarder method provide a
+lightweight tool called an agent or a
+foro used by Spong and that gets
+installed on the endpoint and is
+configured to capture all the important
+logs and send them to the Sim server so
+you would have a dedicated server for
+your sim and then you install a software
+or some tool called an agent on your
+endpoint and that agent collects all the
+data from your endpoint all the logs
+from different directories and then
+forwards that data from your endpoint to
+your sim server right over a specific
+Port so I think swun is like 889 or
+something like that I forget what it was
+next is CIS log CIS log is a widely used
+protocol to collect data from various
+systems like web servers databases and
+so on and are sent realtime data to the
+centralized destination third we have
+the manual upload so some Sim Solutions
+like Splunk and Elk allow users to
+ingest offline data for quick analysis
+and once data is ingested it is
+normalized and made available for
+analysis this is actually really really
+cool sometimes like if you want to do
+like ctfs or you want to do like some ad
+hoc like you know investigations or you
+want to do inst response you just want
+to like download some you know CSV files
+or some Json log files just upload them
+to the Sim and then you're able to
+analyze them ad hog without having to
+have logged that data from the Sim in
+real time you could have just downloaded
+that data from whatever device it is
+converted it to whatever format and then
+just upload it to the system like Spong
+for example and then you can just start
+analyzing that data there finally you
+have port forwarding and some solutions
+can also be configured to listen on a
+certain port and then the endpoints
+forward the data to the Sim instance on
+the listen import this is somewhat
+similar to the agent forwarder method uh
+but with the agent for or forwarder
+method you have an actual agent a tool
+running you know in the background and
+sending that data over a specific port
+to your sim server an example of how
+spum provides various methods for log
+ingestion is shown below so you can
+either upload from your computer you can
+monitor right and then you can forward
+using a Splunk forwarder so let's answer
+the question Below in which location
+within a Linux environment are HTTP logs
+stored I think this was VAR log http
+awesome all right we just looked at the
+very first three tasks in the
+introduction to SIM from tryck me and we
+looked at Network visibility through the
+Sim we looked at different log sources
+and different log ingestions in the next
+video we'll be looking at why do we use
+a SIM we also looking at analyzing logs
+and alerts and also doing some labs to
+actually get our hands dirty with Sim in
+this use case so thanks for watching
+this video and I'll see you in the next
+video where we continue on this
+particular series
+bye-bye
