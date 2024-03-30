@@ -1,4 +1,6 @@
 .DS_Store
+transcripts/*
+videos/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

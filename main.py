@@ -12,6 +12,13 @@ load_dotenv()
 # Use the API key from the .env file
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
+# Sidebar with links
+st.sidebar.title('My Links')
+st.sidebar.markdown('[Blog](https://brandonjcarroll.com)')
+st.sidebar.markdown('[GitHub](https://github.com/8carroll)')   
+st.sidebar.markdown('[Socials](https://brandonjcarroll.com/bio)') 
+
+
 # Ensure the 'videos' and 'transcripts' directories exist
 os.makedirs('videos', exist_ok=True)
 os.makedirs('transcripts', exist_ok=True)
@@ -62,8 +69,8 @@ def summarize_transcript(transcript):
         # Call the OpenAI API with the transcript and summarization prompt
         response = openai.chat.completions.create(model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You are a helpful assistant that summarizes text. When you provide a response, do so as if you are sharing a summary of a video you wantched with a reader of your newsletter.  You should encourage them to check out the video."},
-            {"role": "user", "content": f"Summarize the following transcript into 3 or 4 sentences:\n\n{transcript}"}
+            {"role": "system", "content": "You are a helpful assistant that summarizes text."},
+            {"role": "user", "content": f"When you provide a response, do so as if you are sharing a summary of a video you wantched with a reader of your newsletter.  You should encourage them to check out the video. Summarize the following transcript into 3 or 4 sentences:\n\n{transcript}"}
         ])
         summary = response.choices[0].message.content.strip()
         return summary
