@@ -23,6 +23,34 @@ openai.api_key = os.getenv('OPENAI_API_KEY')
 os.makedirs('videos', exist_ok=True)
 os.makedirs('transcripts', exist_ok=True)
 
+# Function to predict a category
+def predict_category(summary):
+    try:
+        prompt = f"Based on the following summary, categorize it as either a Technical Topic, Career Advice, or Certification and Learning:\n\n{summary}"
+        
+        response = openai.Completion.create(
+            model="text-davinci-003",  # or the latest available model
+            prompt=prompt,
+            temperature=0.7,
+            max_tokens=60,
+            top_p=1.0,
+            frequency_penalty=0.0,
+            presence_penalty=0.0
+        )
+        category_prediction = response.choices[0].text.strip()
+        # Map the LLM's response to your predefined categories if necessary
+        return category_prediction
+    except Exception as e:
+        st.error(f"An error occurred while predicting the category: {e}")
+        return "Unknown"
+
+
+# Function to append summary to a file
+def append_summary_to_file(summary, title, url):
+    with open("summaries.txt", "a", encoding="utf-8") as file:
+        file.write(f"Title: {title}\nURL: {url}\nSummary: {summary}\n\n")
+
+
 # Function to check and download the transcript
 def check_and_download_transcript(video_id):
     try:
@@ -106,6 +134,10 @@ def youtube_processor():
                         # Provide the same text in a text area for easy manual copying
                         copy_text = f"- {yt.title} ({video_url}) - {summary}"
                         st.text_area("Copy the text below:", copy_text, height=100)
+
+                        # After generating the summary in both functions:
+                        append_summary_to_file(summary, yt.title if 'yt' in locals() else page_title, video_url if 'video_url' in locals() else url)
+
                 else:
                     st.warning("No transcript is available for this video. Starting download...")
                     download_path, video_title = download_video(video_url)
@@ -166,6 +198,10 @@ def content_summarizer():
                     # Format the URL and summary for Markdown with the article title
                     copy_text = f"* [{page_title}]({url}) - {summary}"
                     st.text_area("Copy the Markdown text below:", copy_text, height=150)
+                    
+                    # After generating the summary in both functions:
+                    append_summary_to_file(summary, yt.title if 'yt' in locals() else page_title, video_url if 'video_url' in locals() else url)
+
                 else:
                     st.error("Failed to generate a summary.")
             except Exception as e:
