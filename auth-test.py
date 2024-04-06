@@ -8,9 +8,38 @@ from bs4 import BeautifulSoup
 from pytube import YouTube
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api.formatters import TextFormatter
+from streamlit_cognito_auth import CognitoAuthenticator
 
 # Load environment variables from .env file
 load_dotenv()
+
+# Cognito configuration
+pool_id = os.getenv("POOL_ID")
+app_client_id = os.getenv("APP_CLIENT_ID")
+app_client_secret = os.getenv("APP_CLIENT_SECRET")
+
+# Initialize the Cognito Authenticator
+authenticator = CognitoAuthenticator(
+    pool_id=pool_id,
+    app_client_id=app_client_id,
+    app_client_secret=app_client_secret
+)
+
+# Attempt to log in
+is_logged_in = authenticator.login()
+
+if not is_logged_in:
+    st.error("Login failed. Please check your credentials.")
+    st.stop()
+
+# User is logged in, proceed with your app logic
+username = authenticator.get_username()
+st.write(f"Welcome, {username}!")
+
+# Example of a logout button
+if st.button('Logout'):
+    authenticator.logout()
+    st.experimental_rerun()
 
 # Initialize OpenAI client with API key
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))

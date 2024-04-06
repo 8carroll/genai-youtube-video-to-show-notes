@@ -44,3 +44,21 @@ Summary: The speaker, a member of Team SEOA along with their partners Sonia and 
 Category: Technical Topic
 Tags: Amazon Web Services (AWS)
 
+Title: Formula One: Explained!
+URL: https://www.youtube.com/watch?v=s8WHY3Gusx0
+Summary: The speaker shares their newfound interest in Formula 1 racing, prompted by audience suggestions. They emphasize the technical and innovative aspects of the sport, highlighting the intricate engineering and design features of the cars. The speaker breaks down key elements such as championship structure, safety regulations, and technological advancements like KERS and DRS systems. They also provide insights into the race-day experience, from practice sessions to qualifying rounds and the main event, underlining the strategic and competitive nature of Formula 1 racing.
+Category: Technical Topic
+Tags: AWS (Amazon Web Services)
+
+Title: Community | Infrastructure protection on AWS for Beginners
+URL: https://community.aws/content/2egoT8yUjjzxYQrkeUDzZev4GWG/infrastructure-protection-on-aws-for-beginners
+Summary: The opinions expressed in the post are solely those of the individual author and may not represent the views of AWS.
+Category: Technical Topic
+Tags: AWS
+
+Title: Infrastructure protection on AWS for Beginners - Brandon J Carroll
+URL: https://brandonjcarroll.com/infrastructure-protection-on-aws-for-beginners/
+Summary: Infrastructure protection on AWS is crucial, and there are various services like AWS Network Firewall, CloudTrail, IAM, and Config that can be used together for defense in depth. The process of deploying an AWS Network Firewall involves defining a stateless rule group in a JSON file, creating the rule group using the AWS CLI, then creating the Network Firewall itself. Generative AI can play a role in infrastructure protection by analyzing network traffic patterns and anomalies, while Retrieval-Augmented Generation (RAG) can enhance generative AI models for improved threat detection and response. Leveraging Generative AI in AWS infrastructure protection can automate threat detection, enhance decision-making, and offer a more dynamic and informed security approach.
+Category: Technical Topic.
+Tags: AWS Network Firewall, CloudTrail, IAM, Config
+
