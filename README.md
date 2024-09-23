@@ -1,78 +1,60 @@
-# YouTube and Blog Summarization App
+# YouTube Show Notes Generator
 
-This repository contains a Streamlit application that provides two main functionalities:
-1. Summarizing YouTube videos by downloading their transcripts.
-2. Scraping web articles and summarizing their content.
+This Streamlit application automatically generates show notes from YouTube video transcripts using Amazon Bedrock's AI capabilities.
 
 ## Features
 
-- **YouTube Video Summarizer:** Enter a YouTube video URL to fetch its transcript and generate a summary.
-- **Blog Article Summarizer:** Enter the URL of a blog article to scrape its content and generate a summary.
+- **Transcript Fetching:** Automatically downloads transcripts from YouTube videos.
+- **AI-Powered Summarization:** Utilizes Amazon Bedrock to create concise and informative show notes.
+- **Easy-to-Use Interface:** Simple web interface for inputting YouTube URLs and viewing results.
+- **Copy-Friendly Output:** Generates formatted show notes that are easy to copy and use.
 
-## How to Use
+## Prerequisites
 
-### Cloning the Repository
+- Python 3.7+
+- An AWS account with access to Amazon Bedrock
+- AWS CLI configured with appropriate credentials
 
-To get started, clone this repository to your local machine by running:
+## Setup
 
-```bash
-git clone https://github.com/8carroll/youtube-video-summarizer.git
-cd youtube-video-summarizer
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/8carroll/youtube-show-notes-generator.git
+   cd youtube-show-notes-generator
+   ```
 
-### Setting Up a Virtual Environment
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
 
-It's recommended to run this application within a virtual environment. If you don't have `virtualenv` installed, you can install it using pip:
+3. Install required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```bash
-pip install virtualenv
-```
+4. Ensure your AWS CLI is configured with credentials that have access to Amazon Bedrock.
 
-Create and activate a virtual environment:
+## Running the Application
 
-- **For Windows:**
-
-```bash
-virtualenv myvenv
-.\myvenv\Scripts\activate
-```
-
-- **For macOS and Linux:**
-
-```bash
-virtualenv myvenv
-source myvenv/bin/activate
-```
-
-### Installing Dependencies
-
-Install the required Python packages using:
+Launch the Streamlit app:
 
 ```bash
-pip install -r requirements.txt
+streamlit run show_notes_generator.py
 ```
 
-### Running the Application
+## Usage
 
-Start the Streamlit application with:
-
-```bash
-streamlit run main2.py
-```
-
-### Interacting with the Web UI
-
-1. **Navigate to the App URL:** Open your web browser and go to `http://localhost:8501` or the URL provided in the terminal after starting the app.
-2. **Choose the Functionality:** Use the sidebar to select between the "YouTube Summarizer" and "Blog Article Summarizer".
-3. **Enter a URL:** In the input field provided, enter the URL of a YouTube video or a blog article depending on the selected functionality.
-4. **Generate Summary:** Click the "Process Video" or "Summarize Content" button to fetch and summarize the content.
-5. **View and Copy Results:** The summary will be displayed below the button. You can also copy the Markdown-formatted summary from the provided text area.
+1. Open your web browser and go to the URL provided by Streamlit (typically `http://localhost:8501`).
+2. Enter a YouTube video URL in the input field.
+3. Click "Generate Show Notes" to process the video.
+4. View the generated show notes and use the text area to copy them.
 
 ## Contributing
 
-Feel free to fork this repository and submit pull requests to contribute to this project. For major changes, please open an issue first to discuss what you would like to change.
+Contributions are welcome! Please feel free to submit pull requests or open issues to discuss potential improvements.
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
-```
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
